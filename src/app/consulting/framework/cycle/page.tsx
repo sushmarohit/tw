@@ -26,7 +26,7 @@ export default function CycleMethodologyPage() {
       <section className="section-padding">
         <div className="container-custom">
           <h2 className="heading-h2 mb-8">{t('framework-cycle:whenToUse')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {[
               t('framework-cycle:useCase1'),
               t('framework-cycle:useCase2'),
@@ -40,7 +40,7 @@ export default function CycleMethodologyPage() {
           </div>
 
           <h2 className="heading-h2 mb-8">{t('framework-cycle:fourPhases')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {[
               {
                 phase: t('framework-cycle:coordinate.phase'),
@@ -76,7 +76,7 @@ export default function CycleMethodologyPage() {
             })}
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('framework-cycle:keyOutcomes')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
@@ -93,7 +93,7 @@ export default function CycleMethodologyPage() {
             </div>
           </div>
 
-          <div className="card bg-navy-500 text-white mb-12">
+          <div className="card bg-navy-500 text-white mb-8">
             <h2 className="heading-h2 mb-6">{t('framework-cycle:caseStudy')}</h2>
             <div className="space-y-4">
               <div>

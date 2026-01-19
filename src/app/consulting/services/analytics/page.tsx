@@ -49,7 +49,7 @@ export default function AnalyticsServicePage() {
       <section className="section-padding">
         <div className="container-custom">
           <h2 className="heading-h2 mb-8">{t('services-analytics:whatsIncluded')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {[
               t('services-analytics:item1'),
               t('services-analytics:item2'),
@@ -65,7 +65,7 @@ export default function AnalyticsServicePage() {
             ))}
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('services-analytics:dashboardTypes')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
@@ -88,7 +88,7 @@ export default function AnalyticsServicePage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('services-analytics:aiPoweredInsights')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[

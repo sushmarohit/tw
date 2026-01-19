@@ -36,7 +36,7 @@ export function SliderSection() {
   };
 
   return (
-    <section className="bg-navy-500 text-white py-4 pt-24 text-center min-h-[400px] md:min-h-[450px] lg:min-h-[500px] flex items-center">
+    <section className="bg-navy-500 text-white py-6 text-center min-h-[350px] md:min-h-[400px] lg:min-h-[450px] flex items-center">
       <div className="container-custom w-full">
         <div className="relative max-w-4xl mx-auto">
           <div className="min-h-[300px] md:min-h-[350px] lg:min-h-[400px] flex items-center justify-center">

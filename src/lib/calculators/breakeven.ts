@@ -14,12 +14,24 @@ export interface BreakEvenResult {
   breakEvenMonths: number;
   breakEvenDate: string;
   totalBenefits: number;
+  netBenefit: number;
+  roi: number;
   netROI: number;
   paybackPeriod: number;
-  scenarioAnalysis: {
-    optimistic: number;
-    realistic: number;
-    pessimistic: number;
+  totalBenefit: number;
+  scenarios: {
+    conservative: {
+      roi: number;
+      payback: number;
+    };
+    realistic: {
+      roi: number;
+      payback: number;
+    };
+    optimistic: {
+      roi: number;
+      payback: number;
+    };
   };
 }
 
@@ -62,12 +74,27 @@ export function calculateBreakEven(input: BreakEvenInput): BreakEvenResult {
   // Payback period
   const paybackPeriod = investmentCost / monthlyBenefit;
 
-  // Scenario analysis
-  const scenarioAnalysis = {
-    optimistic: investmentCost / (monthlyBenefit * 1.2), // 20% better
-    realistic: breakEvenMonths,
-    pessimistic: investmentCost / (monthlyBenefit * 0.8), // 20% worse
-  };
+  // Scenario analysis - calculate different benefit scenarios
+  const conservativeBenefit = monthlyBenefit * 0.8; // 20% worse
+  const realisticBenefit = monthlyBenefit; // Base case
+  const optimisticBenefit = monthlyBenefit * 1.2; // 20% better
+
+  // Calculate payback periods for each scenario
+  const conservativePayback = investmentCost / conservativeBenefit;
+  const realisticPayback = breakEvenMonths;
+  const optimisticPayback = investmentCost / optimisticBenefit;
+
+  // Calculate ROI for each scenario (3-year projection)
+  const conservativeTotalBenefit = conservativeBenefit * 36;
+  const realisticTotalBenefit = realisticBenefit * 36;
+  const optimisticTotalBenefit = optimisticBenefit * 36;
+
+  const conservativeROI = ((conservativeTotalBenefit - investmentCost) / investmentCost) * 100;
+  const realisticROI = ((realisticTotalBenefit - investmentCost) / investmentCost) * 100;
+  const optimisticROI = ((optimisticTotalBenefit - investmentCost) / investmentCost) * 100;
+
+  // Net benefit (total benefits - investment)
+  const netBenefit = totalBenefits - investmentCost;
 
   return {
     breakEvenMonths: Math.round(breakEvenMonths * 10) / 10,
@@ -77,12 +104,24 @@ export function calculateBreakEven(input: BreakEvenInput): BreakEvenResult {
       day: 'numeric',
     }),
     totalBenefits: Math.round(totalBenefits),
+    netBenefit: Math.round(netBenefit),
+    roi: Math.round(netROI * 10) / 10,
     netROI: Math.round(netROI * 10) / 10,
     paybackPeriod: Math.round(paybackPeriod * 10) / 10,
-    scenarioAnalysis: {
-      optimistic: Math.round(scenarioAnalysis.optimistic * 10) / 10,
-      realistic: Math.round(scenarioAnalysis.realistic * 10) / 10,
-      pessimistic: Math.round(scenarioAnalysis.pessimistic * 10) / 10,
+    totalBenefit: Math.round(realisticTotalBenefit),
+    scenarios: {
+      conservative: {
+        roi: Math.round(conservativeROI * 10) / 10,
+        payback: Math.round(conservativePayback * 10) / 10,
+      },
+      realistic: {
+        roi: Math.round(realisticROI * 10) / 10,
+        payback: Math.round(realisticPayback * 10) / 10,
+      },
+      optimistic: {
+        roi: Math.round(optimisticROI * 10) / 10,
+        payback: Math.round(optimisticPayback * 10) / 10,
+      },
     },
   };
 }

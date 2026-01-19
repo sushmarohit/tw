@@ -39,14 +39,14 @@ export default function PraxioDemoPage() {
   return (
     <div className="min-h-screen bg-gray-50 section-padding">
       <div className="container-custom max-w-3xl">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h1 className="heading-h2 mb-4">{t('praxio-demo:title')}</h1>
           <p className="body-large text-gray-600">
             {t('praxio-demo:subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div className="card">
             <Video className="w-12 h-12 text-teal-500 mx-auto mb-4" />
             <h2 className="heading-h4 mb-4 text-center">{t('praxio-demo:requestLiveDemo')}</h2>

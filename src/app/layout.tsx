@@ -110,7 +110,7 @@ export default function RootLayout({
               <SkipToContent />
               <NetworkBanner />
               <Header />
-              <main id="main-content">{children}</main>
+              <main id="main-content" className="pt-16 md:pt-20 overflow-x-hidden">{children}</main>
               <Footer />
               <MobileStickyCTA />
             </ExitIntentWrapper>

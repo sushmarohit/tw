@@ -44,7 +44,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50 section-padding">
       <div className="container-custom max-w-4xl">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h1 className="heading-h2 mb-4">{t('getInTouch')}</h1>
           <p className="body-large text-gray-600">
             {t('contactSubtitle')}

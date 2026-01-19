@@ -49,7 +49,7 @@ export default function FractionalCBOPage() {
       <section className="section-padding">
         <div className="container-custom">
           <h2 className="heading-h2 mb-8">{t('services-fractional-cbo:whatsIncluded')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {[
               t('services-fractional-cbo:item1'),
               t('services-fractional-cbo:item2'),
@@ -65,7 +65,7 @@ export default function FractionalCBOPage() {
             ))}
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('services-fractional-cbo:whyFractionalCBOWins')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
@@ -86,7 +86,7 @@ export default function FractionalCBOPage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('services-fractional-cbo:fullTimeHireVsFractionalCBO')}</h2>
             <div className="card overflow-x-auto">
               <table className="w-full">

@@ -26,13 +26,13 @@ export function ProofSection() {
   return (
     <section ref={ref} className="section-padding bg-navy-500 text-white">
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="heading-h2 mb-4 text-white">Proven Results, Quantified Outcomes</h2>
           <p className="body-large text-gray-100 max-w-2xl mx-auto">
             Real businesses, real transformations
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (

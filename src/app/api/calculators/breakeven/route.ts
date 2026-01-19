@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { calculateBreakEven, type BreakEvenInput } from '@/lib/calculators/breakeven';
 import { prisma } from '@/lib/db';
+import { generateCalculatorPDFBuffer } from '@/lib/pdf-generator';
+import { sendCalculatorReportEmail } from '@/lib/integrations/nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,7 +26,7 @@ export async function POST(request: NextRequest) {
         userId = user.id;
       }
 
-      await prisma.assessmentSession.create({
+      const session = await prisma.assessmentSession.create({
         data: {
           userId: userId || undefined,
           calculatorType: 'breakeven',
@@ -35,7 +37,36 @@ export async function POST(request: NextRequest) {
         },
       });
 
-      return NextResponse.json({ success: true, result });
+      const sessionId = session.id;
+
+      // Send email with report and PDF attachment (async, don't wait)
+      if (userInfo?.email && sessionId) {
+        const reportUrl = `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/consulting/tools/breakeven`;
+        
+        // Generate PDF and send via email
+        generateCalculatorPDFBuffer('Break-Even Point Calculator', result, userInfo)
+          .then((pdfBuffer) => {
+            return sendCalculatorReportEmail(
+              userInfo.email!,
+              'Break-Even Point Calculator',
+              reportUrl,
+              userInfo.name,
+              pdfBuffer
+            );
+          })
+          .then((emailSent) => {
+            if (emailSent) {
+              console.log('[Breakeven] Email sent successfully to:', userInfo.email);
+            } else {
+              console.error('[Breakeven] Failed to send email to:', userInfo.email);
+            }
+          })
+          .catch((error) => {
+            console.error('[Breakeven] Email send error:', error);
+          });
+      }
+
+      return NextResponse.json({ success: true, result, sessionId });
     } catch (dbError) {
       console.error('Database error:', dbError);
       return NextResponse.json({ success: true, result });

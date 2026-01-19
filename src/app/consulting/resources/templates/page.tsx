@@ -50,7 +50,7 @@ export default function TemplatesPage() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {templateCategories.map((category, index) => {
               const Icon = category.icon;
               return (

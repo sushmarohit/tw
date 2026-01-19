@@ -17,7 +17,7 @@ export function HeroSection() {
           <p className="body-large mb-8 text-gray-100">
             {t('hero:subtitle')}
           </p>
-          <p className="body-default mb-12 text-gold-300 italic">
+          <p className="body-default mb-8 text-gold-300 italic">
             <span className="block">"{t('hero:quote').split('. ')[0]}"</span>
             <span className="block">{t('hero:quote').split('. ').slice(1).join('. ')}"™</span>
           </p>

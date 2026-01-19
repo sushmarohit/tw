@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import { calculateBreakEven, type BreakEvenInput } from '@/lib/calculators/breakeven';
+import { calculateBreakEven, type BreakEvenInput, type BreakEvenResult } from '@/lib/calculators/breakeven';
 import { trackCalculatorStart, trackCalculatorComplete } from '@/lib/analytics/events';
 import { formatCurrency } from '@/lib/utils';
 
@@ -16,7 +16,7 @@ export default function BreakEvenPage() {
     monthlyRevenueIncrease: 0,
     rampUpTime: 0,
   });
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<BreakEvenResult | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [userInfo, setUserInfo] = useState({ email: '', name: '', companyName: '' });
   const [showUserInfoForm, setShowUserInfoForm] = useState(true);
@@ -83,26 +83,28 @@ export default function BreakEvenPage() {
               </div>
             </div>
 
-            <div className="mb-8">
-              <h3 className="heading-h4 mb-4">{t('tools-breakeven:scenarioAnalysis')}</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="border border-gray-200 rounded-lg p-4">
-                  <p className="body-small font-semibold text-gray-700 mb-2">{t('tools-breakeven:conservative')}</p>
-                  <p className="text-2xl font-bold text-gray-600">{result.scenarios.conservative.roi}%</p>
-                  <p className="body-small text-gray-500">{t('tools-breakeven:payback')} {result.scenarios.conservative.payback} {t('tools-breakeven:months')}</p>
-                </div>
-                <div className="border-2 border-teal-500 rounded-lg p-4 bg-teal-50">
-                  <p className="body-small font-semibold text-teal-700 mb-2">{t('tools-breakeven:realistic')}</p>
-                  <p className="text-2xl font-bold text-teal-500">{result.scenarios.realistic.roi}%</p>
-                  <p className="body-small text-gray-500">{t('tools-breakeven:payback')} {result.scenarios.realistic.payback} {t('tools-breakeven:months')}</p>
-                </div>
-                <div className="border border-gray-200 rounded-lg p-4">
-                  <p className="body-small font-semibold text-gray-700 mb-2">{t('tools-breakeven:optimistic')}</p>
-                  <p className="text-2xl font-bold text-gray-600">{result.scenarios.optimistic.roi}%</p>
-                  <p className="body-small text-gray-500">{t('tools-breakeven:payback')} {result.scenarios.optimistic.payback} {t('tools-breakeven:months')}</p>
+            {result.scenarios && (
+              <div className="mb-8">
+                <h3 className="heading-h4 mb-4">{t('tools-breakeven:scenarioAnalysis')}</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="border border-gray-200 rounded-lg p-4">
+                    <p className="body-small font-semibold text-gray-700 mb-2">{t('tools-breakeven:conservative')}</p>
+                    <p className="text-2xl font-bold text-gray-600">{result.scenarios.conservative?.roi ?? 0}%</p>
+                    <p className="body-small text-gray-500">{t('tools-breakeven:payback')} {result.scenarios.conservative?.payback ?? 0} {t('tools-breakeven:months')}</p>
+                  </div>
+                  <div className="border-2 border-teal-500 rounded-lg p-4 bg-teal-50">
+                    <p className="body-small font-semibold text-teal-700 mb-2">{t('tools-breakeven:realistic')}</p>
+                    <p className="text-2xl font-bold text-teal-500">{result.scenarios.realistic?.roi ?? 0}%</p>
+                    <p className="body-small text-gray-500">{t('tools-breakeven:payback')} {result.scenarios.realistic?.payback ?? 0} {t('tools-breakeven:months')}</p>
+                  </div>
+                  <div className="border border-gray-200 rounded-lg p-4">
+                    <p className="body-small font-semibold text-gray-700 mb-2">{t('tools-breakeven:optimistic')}</p>
+                    <p className="text-2xl font-bold text-gray-600">{result.scenarios.optimistic?.roi ?? 0}%</p>
+                    <p className="body-small text-gray-500">{t('tools-breakeven:payback')} {result.scenarios.optimistic?.payback ?? 0} {t('tools-breakeven:months')}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
             <div className="mb-8 p-4 bg-navy-50 rounded-lg">
               <p className="body-default text-gray-700">

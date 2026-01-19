@@ -85,7 +85,7 @@ export default function PraxioIntegrationsPage() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-4">{t('praxio-integrations:whyTitle')}</h2>
             <p className="body-large text-gray-700 mb-6">
               {t('praxio-integrations:whyDescription')}
@@ -120,7 +120,7 @@ export default function PraxioIntegrationsPage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('praxio-integrations:availableTitle')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {integrations.map((integration, index) => {

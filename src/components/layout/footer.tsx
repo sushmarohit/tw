@@ -59,7 +59,7 @@ export function Footer() {
     <footer className="bg-navy-500 text-white">
       {/* Trust Badges Row */}
       <div className="border-b border-navy-400">
-        <div className="container-custom py-8">
+        <div className="container-custom py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 text-center">
             {trustBadgeKeys.map((key) => (
               <div key={key} className="text-body-small">
@@ -71,7 +71,7 @@ export function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container-custom py-16">
+      <div className="container-custom py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Column 1: Brand */}
           <div>
@@ -82,7 +82,7 @@ export function Footer() {
               <span className="font-serif font-bold text-xl">TwelfthKey</span>
             </div>
             <p className="text-body-small text-gray-300 italic mb-4">
-              "{t('footer:tagline')}"
+              "{t('footer:tagline')}"™
             </p>
             <p className="text-body-small text-gray-400">
               {t('footer:proprietary')}

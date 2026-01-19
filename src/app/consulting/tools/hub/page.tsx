@@ -127,7 +127,7 @@ export default function ToolsHubPage() {
       {/* How It Works */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="heading-h2 text-center mb-12">{t('tools:howToolsWork')}</h2>
+          <h2 className="heading-h2 text-center mb-8">{t('tools:howToolsWork')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -164,7 +164,7 @@ export default function ToolsHubPage() {
       {/* FAQ */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom max-w-3xl">
-          <h2 className="heading-h2 text-center mb-12">{t('tools:faq')}</h2>
+          <h2 className="heading-h2 text-center mb-8">{t('tools:faq')}</h2>
           <div className="space-y-6">
             <div className="card">
               <h3 className="heading-h4 mb-2">{t('tools:faq1.question')}</h3>

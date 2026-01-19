@@ -25,7 +25,7 @@ export default function HowWeHelpPage() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <h2 className="heading-h2 text-center mb-12">{t('how-we-help:methodTitle')}</h2>
+          <h2 className="heading-h2 text-center mb-8">{t('how-we-help:methodTitle')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="card text-center">
               <div className="w-16 h-16 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">

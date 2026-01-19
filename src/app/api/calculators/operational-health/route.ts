@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { calculateHealthScore, type UserAnswer } from '@/lib/calculators/operational-health';
 import { prisma } from '@/lib/db';
 import { upsertHubSpotContact } from '@/lib/integrations/hubspot';
-import { sendCalculatorReportEmail } from '@/lib/integrations/sendgrid';
+import { sendCalculatorReportEmail } from '@/lib/integrations/nodemailer';
+import { generateCalculatorPDFBuffer } from '@/lib/pdf-generator';
 
 export async function POST(request: NextRequest) {
   try {
@@ -107,18 +108,25 @@ export async function POST(request: NextRequest) {
         console.error('HubSpot sync error:', error);
       });
     }
-
-    // Send email with report (async, don't wait)
+/////////////////////////
+    // Send email with report and PDF attachment (async, don't wait)
     if (userInfo?.email && sessionId) {
       const reportUrl = `${process.env.NEXT_PUBLIC_APP_URL}/consulting/tools/health-check/report/${sessionId}`;
-      sendCalculatorReportEmail(
-        userInfo.email,
-        'Operational Health Diagnostic',
-        reportUrl,
-        userInfo.name
-      ).catch((error) => {
-        console.error('Email send error:', error);
-      });
+      
+      // Generate PDF and send via email
+      generateCalculatorPDFBuffer('Operational Health Diagnostic', result, userInfo)
+        .then((pdfBuffer) => {
+          return sendCalculatorReportEmail(
+            userInfo.email!,
+            'Operational Health Diagnostic',
+            reportUrl,
+            userInfo.name,
+            pdfBuffer
+          );
+        })
+        .catch((error) => {
+          console.error('Email send error:', error);
+        });
     }
 
     return NextResponse.json({

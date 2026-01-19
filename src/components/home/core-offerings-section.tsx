@@ -30,7 +30,7 @@ export function CoreOfferingsSection() {
   return (
     <section className="section-padding">
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="heading-h2 mb-4">TwelfthKey Delivers Operational Excellence</h2>
           <p className="body-large text-gray-600 max-w-2xl mx-auto">
             Three integrated layers for measurable transformation

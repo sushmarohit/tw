@@ -26,7 +26,7 @@ export function CaseStudyPreviewSection() {
   return (
     <section className="section-padding bg-gray-50">
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="heading-h2 mb-4">Success Stories From Your Industry</h2>
           <p className="body-large text-gray-600 max-w-2xl mx-auto">
             Discover how we transformed operations across banking, FinTech, and beyond

@@ -49,7 +49,7 @@ export default function AssessmentServicePage() {
       <section className="section-padding">
         <div className="container-custom">
           <h2 className="heading-h2 mb-8">{t('services-assessment:whatYouGet')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {[
               t('services-assessment:item1'),
               t('services-assessment:item2'),
@@ -65,7 +65,7 @@ export default function AssessmentServicePage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div className="card text-center">
               <Clock className="w-12 h-12 text-teal-500 mx-auto mb-4" />
               <h3 className="heading-h4 mb-2">{t('services-assessment:duration')}</h3>

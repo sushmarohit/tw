@@ -64,7 +64,7 @@ export default function FrameworkPage() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <h2 className="heading-h2 text-center mb-12">{t('framework:sixMethodologies')}</h2>
+          <h2 className="heading-h2 text-center mb-8">{t('framework:sixMethodologies')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {methodologies.map((method, index) => {
               const Icon = method.icon;
@@ -87,7 +87,7 @@ export default function FrameworkPage() {
 
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="heading-h2 text-center mb-12">{t('framework:fiveIndices')}</h2>
+          <h2 className="heading-h2 text-center mb-8">{t('framework:fiveIndices')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {[
               { name: t('framework:par'), desc: t('framework:parDesc') },

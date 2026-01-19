@@ -31,7 +31,7 @@ export default function PraxioPage() {
       <section className="section-padding">
         <div className="container-custom">
           <h2 className="heading-h2 mb-8">{t('praxio:whatIsTitle')}</h2>
-          <div className="card mb-12">
+          <div className="card mb-8">
             <p className="body-large text-gray-700 mb-4">
               {t('praxio:whatIsDescription')}
             </p>
@@ -52,7 +52,7 @@ export default function PraxioPage() {
           </div>
 
           <h2 className="heading-h2 mb-8">{t('praxio:keyFeatures')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {[
               {
                 icon: Eye,

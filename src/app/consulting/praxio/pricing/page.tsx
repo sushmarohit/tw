@@ -86,7 +86,7 @@ export default function PraxioPricingPage() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {tiers.map((tier, i) => (
               <div
                 key={i}
@@ -128,7 +128,7 @@ export default function PraxioPricingPage() {
             ))}
           </div>
 
-          <div className="card bg-navy-500 text-white mb-12">
+          <div className="card bg-navy-500 text-white mb-8">
             <h2 className="heading-h2 mb-6 text-white">{t('praxio-pricing:billingDiscounts')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>

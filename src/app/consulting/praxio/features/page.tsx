@@ -22,7 +22,7 @@ export default function PraxioFeaturesPage() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('praxio-features:dashboardBuilder')}</h2>
             <div className="card">
               <p className="body-large text-gray-700 mb-4">
@@ -46,7 +46,7 @@ export default function PraxioFeaturesPage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('praxio-features:automatedReporting')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
@@ -64,7 +64,7 @@ export default function PraxioFeaturesPage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('praxio-features:aiAnomalyDetection')}</h2>
             <div className="card">
               <div className="space-y-4">
@@ -86,7 +86,7 @@ export default function PraxioFeaturesPage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('praxio-features:securityCompliance')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[

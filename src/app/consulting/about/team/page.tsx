@@ -48,7 +48,7 @@ export default function TeamPage() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto mb-12">
+          <div className="max-w-3xl mx-auto mb-8">
             <h2 className="heading-h2 mb-6 text-center">{t('about-team:whyTitle')}</h2>
             <p className="body-large text-gray-700 mb-4">
               {t('about-team:whyDescription')}

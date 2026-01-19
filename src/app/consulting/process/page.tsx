@@ -58,7 +58,7 @@ export default function ProcessPage() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <h2 className="heading-h2 text-center mb-12">{t('process:stepTitle')}</h2>
+          <h2 className="heading-h2 text-center mb-8">{t('process:stepTitle')}</h2>
           <div className="space-y-8">
             {steps.map((step, index) => {
               const Icon = step.icon;

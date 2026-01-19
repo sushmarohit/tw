@@ -48,7 +48,7 @@ export default function CareersPage() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto mb-12">
+          <div className="max-w-3xl mx-auto mb-8">
             <h2 className="heading-h2 mb-6 text-center">{t('about-careers:whyTitle')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[

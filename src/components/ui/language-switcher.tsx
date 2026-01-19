@@ -1,7 +1,6 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
-import { Globe } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -38,12 +37,11 @@ export function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-navy-500 hover:text-gold-300 transition-colors focus-visible-ring rounded-lg"
+        className="flex items-center justify-center w-10 h-10 text-navy-500 hover:text-gold-300 hover:bg-gray-100 transition-colors focus-visible-ring rounded-lg font-semibold text-sm"
         aria-label="Select language"
         aria-expanded={isOpen}
       >
-        <Globe className="w-5 h-5" aria-hidden="true" />
-        <span className="hidden sm:inline text-sm font-medium">{currentLanguage.nativeName}</span>
+        <span>{currentLanguage.code.toUpperCase()}</span>
       </button>
 
       <AnimatePresence>
@@ -64,19 +62,22 @@ export function LanguageSwitcher() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-[60] overflow-hidden"
+              className="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 z-[60] overflow-hidden"
             >
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   type="button"
                   onClick={() => changeLanguage(lang.code)}
-                  className={`w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors focus-visible-ring ${
+                  className={`w-full text-left px-4 py-2.5 hover:bg-gray-50 transition-colors focus-visible-ring ${
                     i18n.language === lang.code ? 'bg-teal-50 text-teal-600 font-semibold' : 'text-gray-700'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span>{lang.nativeName}</span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-xs">{lang.code.toUpperCase()}</span>
+                      <span className="text-sm">{lang.nativeName}</span>
+                    </div>
                     {i18n.language === lang.code && (
                       <span className="text-teal-500">✓</span>
                     )}

@@ -26,7 +26,7 @@ export default function ParseMethodologyPage() {
       <section className="section-padding">
         <div className="container-custom">
           <h2 className="heading-h2 mb-8">{t('framework-parse:whenToUse')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {[
               t('framework-parse:useCase1'),
               t('framework-parse:useCase2'),
@@ -39,7 +39,7 @@ export default function ParseMethodologyPage() {
             ))}
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('framework-parse:framework')}</h2>
             <div className="space-y-6">
               {[
@@ -91,7 +91,7 @@ export default function ParseMethodologyPage() {
             </div>
           </div>
 
-          <div className="card bg-navy-500 text-white mb-12">
+          <div className="card bg-navy-500 text-white mb-8">
             <h2 className="heading-h2 mb-6">{t('framework-parse:keyMetric')}</h2>
             <p className="body-large text-gray-200">
               {t('framework-parse:keyMetricDescription')}

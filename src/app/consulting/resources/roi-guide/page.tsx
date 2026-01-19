@@ -46,7 +46,7 @@ export default function ROIGuidePage() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto mb-12">
+          <div className="max-w-3xl mx-auto mb-8">
             <h2 className="heading-h2 mb-6">{t('roi-guide:whyMattersTitle')}</h2>
             <p className="body-large text-gray-700 mb-4">
               {t('roi-guide:whyMattersDescription')}
@@ -66,7 +66,7 @@ export default function ROIGuidePage() {
             </ul>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {sections.map((section, index) => {
               const Icon = section.icon;
               return (

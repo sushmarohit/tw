@@ -24,7 +24,7 @@ export function PraxioPreviewSection() {
   return (
     <section className="section-padding">
       <div className="container-custom">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="heading-h2 mb-4">Experience PraXio™—Your Governance Command Center</h2>
           <p className="body-large text-gray-600 max-w-2xl mx-auto">
             Real-time dashboards, automated reporting, AI-driven insights

@@ -121,7 +121,7 @@ export default function G2POverviewPage() {
       <section className="section-padding">
         <div className="container-custom">
           <h2 className="heading-h2 mb-8">{t('framework-g2p:whatIs')}</h2>
-          <div className="card mb-12">
+          <div className="card mb-8">
             <p className="body-large text-gray-700 mb-4">
               {t('framework-g2p:whatIsDescription')}
             </p>
@@ -143,7 +143,7 @@ export default function G2POverviewPage() {
           </div>
 
           <h2 className="heading-h2 mb-8">{t('framework-g2p:sixMethodologies')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {methodologies.map((method, index) => {
               const Icon = method.icon;
               return (
@@ -168,7 +168,7 @@ export default function G2POverviewPage() {
           </div>
 
           <h2 className="heading-h2 mb-8">{t('framework-g2p:fiveIndices')}</h2>
-          <div className="space-y-6 mb-12">
+          <div className="space-y-6 mb-8">
             {indices.map((index, i) => (
               <div key={i} className="card">
                 <div className="flex items-start justify-between mb-4">
@@ -195,7 +195,7 @@ export default function G2POverviewPage() {
             ))}
           </div>
 
-          <div className="card bg-navy-500 text-white mb-12">
+          <div className="card bg-navy-500 text-white mb-8">
             <h2 className="heading-h2 mb-6">{t('framework-g2p:implementationStages')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               {[

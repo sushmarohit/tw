@@ -29,7 +29,7 @@ export default function BookingPage() {
               style={{ minHeight: '700px', width: '100%' }}
             />
           ) : (
-            <div className="text-center py-12">
+            <div className="text-center py-8">
               <p className="body-default text-gray-600 mb-4">
                 {t('calendlyNotConfigured')}
               </p>

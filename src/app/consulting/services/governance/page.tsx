@@ -49,7 +49,7 @@ export default function GovernanceServicePage() {
       <section className="section-padding">
         <div className="container-custom">
           <h2 className="heading-h2 mb-8">{t('services-governance:whatsIncluded')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {[
               t('services-governance:item1'),
               t('services-governance:item2'),
@@ -65,7 +65,7 @@ export default function GovernanceServicePage() {
             ))}
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('services-governance:theGovernanceLoop')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               {[
@@ -87,7 +87,7 @@ export default function GovernanceServicePage() {
             </div>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('services-governance:g2pIndicesTracked')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               {[
@@ -105,7 +105,7 @@ export default function GovernanceServicePage() {
             </div>
           </div>
 
-          <div className="card bg-navy-500 text-white mb-12">
+          <div className="card bg-navy-500 text-white mb-8">
             <h3 className="heading-h3 mb-4">{t('services-governance:investmentRoi')}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>

@@ -26,7 +26,7 @@ export default function MorphMethodologyPage() {
       <section className="section-padding">
         <div className="container-custom">
           <h2 className="heading-h2 mb-8">{t('framework-morph:whenToUse')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {[
               t('framework-morph:useCase1'),
               t('framework-morph:useCase2'),
@@ -39,7 +39,7 @@ export default function MorphMethodologyPage() {
             ))}
           </div>
 
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="heading-h2 mb-8">{t('framework-morph:keyFocus')}</h2>
             <div className="card bg-gold-50 border-2 border-gold-300">
               <p className="body-large text-gray-700 mb-4">
@@ -60,7 +60,7 @@ export default function MorphMethodologyPage() {
             </div>
           </div>
 
-          <div className="card bg-navy-500 text-white mb-12">
+          <div className="card bg-navy-500 text-white mb-8">
             <h2 className="heading-h2 mb-6">{t('framework-morph:expectedOutcomes')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
