@@ -67,15 +67,16 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center space-x-2 focus-visible-ring rounded-lg p-2"
+          className="flex gap-4 items-center space-x-2 focus-visible-ring rounded-lg p-2"
           aria-label="TwelfthKey Consulting Home"
         >
-          <div className="w-10 h-10 lg:w-12 lg:h-12 bg-navy-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg lg:text-xl">TK</span>
+          <div className="w-16 h-10 sm:w-24 lg:w-20 lg:h-12  rounded-lg flex flex-col items-center justify-center ">
+            <img src='/tw_logo.jpeg' alt='logo' className='w-56 h-16 rounded-3xl'/>
+            <span className="text-navy-500 font-bold text-sm lg:text-xl">TwelfthKey</span>
           </div>
-          {/* <span className="font-serif font-bold text-xl text-navy-500 hidden sm:block">
-            TwelfthKey
-          </span> */}
+          <span className="font-serif font-bold text-xl text-navy-500 hidden sm:block">
+            Win the Operations Game
+          </span>
         </Link>
 
         {/* Desktop & Tablet Navigation - Compact on tablet, full on desktop */}

@@ -89,7 +89,7 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'TwelfthKey™ Consulting',
               url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-              logo: `${process.env.NEXT_PUBLIC_APP_URL}/logo.png`,
+              logo: `https://images.unsplash.com/photo-1545231027-637d2f6210f8?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`,
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+91-XXXXXXXXXX',
